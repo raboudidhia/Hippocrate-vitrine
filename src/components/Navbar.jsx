@@ -33,68 +33,35 @@ const Navbar = () => {
         </button>
       </div>
       <div className="md:hidden">
-    <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
-        <img
-            src={menu}
-            alt="Menu"
-            className="w-3 h-3"
-            
-        />
-    </button>
-</div>
-{isOpen && (
-    <div className="absolute top-[77px] right-0 w-full bg-black flex flex-col items-center space-y-4 py-4 md:hidden">
-        <a
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="focus:outline-none"
+        >
+          <img src={menu} alt="Menu" className="w-3 h-3" />
+        </button>
+      </div>
+      {isOpen && (
+        <div className="absolute top-[77px] right-0 w-full bg-black flex flex-col items-center space-y-4 py-4 md:hidden">
+          <a
             href="#accueil"
             className="text-white text-sm font-bold font-['Poppins'] tracking-tight hover:text-[#1f8287]"
-        >
+          >
             Accueil
-        </a>
-        <a
+          </a>
+          <a
             href="#services"
             className="text-[#e6e6e6] text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
-        >
+          >
             Services
-        </a>
-        <button
-            onClick={() => (window.location.href = '#contact')}
+          </a>
+          <button
+            onClick={() => (window.location.href = "#contact")}
             className="text-white text-sm font-semibold font-['Poppins'] tracking-tight bg-[#1f8287] px-4 py-2 hover:text-[#1f8287] hover:bg-white"
-        >
+          >
             Contact
-        </button>
-    </div>
-)}
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+          </button>
+        </div>
+      )}
     </nav>
   );
 };
