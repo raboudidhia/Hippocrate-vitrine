@@ -5,7 +5,7 @@ import menu from "../assets/menu.svg";
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <nav className="w-full h-[77px] fixed top-0 bg-black flex items-center justify-between px-6 md:px-14">
+    <nav className="w-full h-[77px] fixed top-0 z-50 flex items-center justify-between px-6 md:px-14">
       <div className="flex items-center">
         <img className="w-[40px] h-[50px] mr-4" src={logo} alt="Logo" />
         <div className="text-white text-[24px] font-semibold font-['Poppins']">
@@ -21,7 +21,7 @@ const Navbar = () => {
         </a>
         <a
           href="#services"
-          className="mt-2 text-[#e6e6e6] text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287] "
+          className="mt-2 text-[#e6e6e6] text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
         >
           Services
         </a>
@@ -41,7 +41,7 @@ const Navbar = () => {
         </button>
       </div>
       {isOpen && (
-        <div className="absolute top-[77px] right-0 w-full bg-black flex flex-col items-center space-y-4 py-4 md:hidden">
+        <div className="absolute top-[77px] right-0 w-full flex flex-col items-center space-y-4 py-4 md:hidden">
           <a
             href="#accueil"
             className="text-white text-sm font-bold font-['Poppins'] tracking-tight hover:text-[#1f8287]"

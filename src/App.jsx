@@ -1,15 +1,11 @@
-
-//import Navbar from "./components/Navbar";
-import  Acceuil  from "./pages/acceuil";
+import Navbar from "./components/Navbar";
+import Acceuil from "./pages/acceuil";
 
 const App = () => (
-  
-  <div >
-  <Acceuil />
-  {/* Autres composants */}
-</div>
-  
-
-
+  <div>
+    <Navbar />
+    <Acceuil />
+  </div>
 );
+
 export default App;
