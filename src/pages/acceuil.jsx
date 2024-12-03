@@ -18,7 +18,7 @@ export const Acceuil = () => {
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}
-        className="w-full h-[737px] md:h-[500px] lg:h-[737px]"
+        className="w-full h-[737px] md:h-[500px] lg:h-[737px] "
       >
         <SwiperSlide>
           <div className="w-full h-[737px] relative bg-black">
