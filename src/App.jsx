@@ -1,11 +1,14 @@
 import Navbar from "./components/Navbar";
 import Acceuil from "./pages/acceuil";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => (
-  <div>
+  <Router>
     <Navbar />
-    <Acceuil />
-  </div>
+    <Routes>
+      <Route path="/" element={<Acceuil />} />
+    </Routes>
+  </Router>
 );
 
 export default App;

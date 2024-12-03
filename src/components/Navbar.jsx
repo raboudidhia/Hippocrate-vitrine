@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "../assets/logo.png";
 import menu from "../assets/menu.svg";
+import close from "../assets/close.svg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -13,31 +15,31 @@ const Navbar = () => {
         </div>
       </div>
       <div className="hidden md:flex space-x-8">
-        <a
-          href="#accueil"
+        <Link
+          to="/"
           className="mt-2 text-white text-sm font-bold font-['Poppins'] tracking-tight hover:text-[#1f8287]"
         >
           Accueil
-        </a>
-        <a
-          href="#services"
+        </Link>
+        <Link
+          to="/services"
           className="mt-2 text-[#e6e6e6] text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
         >
           Services
-        </a>
-        <button
-          onClick={() => (window.location.href = "#contact")}
+        </Link>
+        <Link
+          to="/contact"
           className="text-white text-sm font-semibold font-['Poppins'] tracking-tight bg-[#1f8287] px-4 py-2 hover:text-[#1f8287] hover:bg-white"
         >
           Contact
-        </button>
+        </Link>
       </div>
       <div className="md:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="focus:outline-none"
         >
-          <img src={menu} alt="Menu" className="w-3 h-3" />
+          <img src={isOpen ? close : menu} alt="Menu" className="w-3 h-3" />
         </button>
       </div>
       {isOpen && (
@@ -54,12 +56,12 @@ const Navbar = () => {
           >
             Services
           </a>
-          <button
-            onClick={() => (window.location.href = "#contact")}
+          <Link
+            to="/contact"
             className="text-white text-sm font-semibold font-['Poppins'] tracking-tight bg-[#1f8287] px-4 py-2 hover:text-[#1f8287] hover:bg-white"
           >
             Contact
-          </button>
+          </Link>
         </div>
       )}
     </nav>
