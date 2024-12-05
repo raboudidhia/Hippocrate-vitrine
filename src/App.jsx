@@ -7,14 +7,14 @@ import InfoSection from "./components/InfoSection";
 const App = () => (
   <div className="flex flex-col min-h-screen">
     <Router>
-      {/* <Navbar /> */}
-      {/* <main className="flex-grow">
+      <Navbar />
+      <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Acceuil />} />
         </Routes>
-      </main> */}
+      </main>
       <InfoSection />
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   </div>
 );

@@ -1,4 +1,7 @@
 import React from "react";
+import { IoDocumentsSharp } from "react-icons/io5";
+
+
 import big from "../assets/hipp10.jpg";
 import sm_left from "../assets/hipp4.jpg";
 import sm_right from "../assets/hipp5.jpg";
@@ -8,7 +11,7 @@ import snack_icon from "../assets/snack.png"
 
 const InfoSection = () => {
     return (
-        <div className="w-full flex flex-col-reverse md:flex-row md:gap-20 md:justify-center md:max-w-[1100px] md:mx-auto items-center px-2 gap-6 ">
+        <div className="w-full flex flex-col-reverse md:flex-row md:gap-36 md:justify-center md:max-w-[1100px] md:mx-auto items-center px-2 gap-6 py-10">
             <div
                 className="md:h-[500px] h-[350px] w-[min(70%,400px)] rounded-lg relative shrink-0 "
                 style={{ backgroundImage: `url(${big})`, backgroundSize:'100% 100%' }}
@@ -75,7 +78,7 @@ const InfoSection = () => {
                     <li>
                         <div className="flex flex-row gap-6">
                             <div className="bg-primary h-14 w-14 rounded-2xl p-[0.8rem] shrink-0">
-                                <img src={doc_icon} className="w-full h-full" />
+                                <IoDocumentsSharp className="w-full h-full text-white" />
                             </div>
                             <div>
                                 <h2 className="font-bold ">
