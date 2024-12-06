@@ -1,22 +1,23 @@
 {
     "composition": [
         {
-			"number":1,
+			"number":"01",
             "title": "Trois salles polyvalentes",
-            "content": "-Salle <b>S1 </b>: Capacité de <b>25 Places</b> <br /> -Salle <b>S2 </b>: Capacité de <b>33 Places</b> <br /> -Salle <b>S3 </b>: Capacité de <b>29 Places</b> <br />"
+            "content": "-Salle <b>S1 </b>: Capacité de <b>25 Places</b> <br /> -Salle <b>S2 </b>: Capacité de <b>33 Places</b> <br /> -Salle <b>S3 </b>: Capacité de <b>29 Places</b> <br />",
+            "img":"/src/"
         },
         {
-			"number":2,
+			"number":"02",
             "title": "Une Grande salle de lecture",
             "content": "-Conçue pour favoriser la concetration et le travail individuel,avec une capacité de <b>68 Places</b>."
         },
         {
-			"number":3,
+			"number":"03",
             "title": "Une Salle annexe",
             "content": "-Une espace complémentaire de <b>15 Places</b>,idéale pour des réunions en petit comité ou des ateliers spécifiques."
         },
         {
-			"number":4,
+			"number":"04",
             "title": "Un Coffee Shop et une Terasse",
             "content": "-Une zone conviviale pouvant accueillir jusqu'à 40 Personnes, parfaite pour des évènements et des pauses"
         }
