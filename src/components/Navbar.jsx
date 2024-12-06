@@ -44,18 +44,18 @@ const Navbar = () => {
       </div>
       {isOpen && (
         <div className="absolute top-[77px] right-0 w-full flex flex-col items-center space-y-4 py-4 md:hidden">
-          <a
-            href="#accueil"
+          <Link
+            to="/"
             className="text-white text-sm font-bold font-['Poppins'] tracking-tight hover:text-[#1f8287]"
           >
             Accueil
-          </a>
-          <a
-            href="#services"
+          </Link>
+          <Link
+            to="/services"
             className="text-[#e6e6e6] text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
           >
             Services
-          </a>
+          </Link>
           <Link
             to="/contact"
             className="text-white text-sm font-semibold font-['Poppins'] tracking-tight bg-[#1f8287] px-4 py-2 hover:text-[#1f8287] hover:bg-white"
