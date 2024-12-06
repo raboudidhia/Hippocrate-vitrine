@@ -4,6 +4,7 @@ import Acceuil from "./pages/acceuil";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import InfoSection from "./components/InfoSection";
 import ServicesSection from "./components/ServicesSection";
+import NosTarifs from "./pages/NosTarifs";
 
 const App = () => (
     <div className="flex flex-col min-h-screen">
@@ -13,10 +14,10 @@ const App = () => (
             <main className="flex-grow">
                 <Routes>
                     <Route path="/" element={<Acceuil />} />
+                    <Route path="/tarifs" element={<NosTarifs />} />
                 </Routes>
             </main>
-            <InfoSection />
-            <ServicesSection />
+
             <Footer />
         </Router>
     </div>
