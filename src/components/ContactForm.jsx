@@ -2,7 +2,7 @@
 export const ContactForm = () => {
   return (
     <div className="w-full bg-white flex justify-center py-16" id="contact">
-      <div className="max-w-screen-lg w-full bg-white rounded-lg shadow-md flex flex-col md:flex-row overflow-hidden">
+      <div className="max-w-screen-lg w-[95%] bg-white rounded-lg shadow-md flex flex-col md:flex-row overflow-hidden">
         <div className="w-full md:w-2/5 bg-[#1f1f1f] text-white p-6 md:p-8 flex flex-col justify-between">
           <div>
             <h2 className="text-2xl font-semibold font-['Poppins'] mb-3">
