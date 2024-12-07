@@ -3,7 +3,7 @@ import { ServiceCard } from "./ServiceCard";
 
 const ServicesSection = () => {
   return (
-    <div className="py-4 flex-col items-center">
+    <div className="py-4 flex-col items-center pb-10">
       <h2 className="md:text-[52px] font-bold text-[26px] text-center md:font-[600] py-4">
         Composition de l’espace
       </h2>

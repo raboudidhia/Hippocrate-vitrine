@@ -11,7 +11,7 @@ const TarifGroupe = ({ obj }) => {
   Binome = splitPrices(Binome);
   Trinome = splitPrices(Trinome);
   return (
-    <div className="flex flex-col gap-4 xs:gap-0 xs:flex-row lg:gap-20 justify-center">
+    <div className="flex gap-4 xs:gap-0 flex-wrap lg:gap-20 justify-center">
       <TarifCard prices={Binome} type={"Binôme"} />
       <TarifCard prices={Individuel} type={"Individuel"} />
       <TarifCard prices={Trinome} type={"Trinôme"} />

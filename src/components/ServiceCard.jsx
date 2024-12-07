@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 export const ServiceCard = ({ obj }) => {
   const { title, content, number, img } = obj;
   return (
-    <div className="md:rounded-lg overflow-hidden w-[min(90vw,472px)] md:h-[450px] relative shadow-xl">
+    <div className="rounded-lg overflow-hidden w-[min(90vw,472px)] md:h-[450px] relative shadow-xl">
       <img
         src={img}
         className="md:h-[255px] h-[200px] w-full shadow-md"

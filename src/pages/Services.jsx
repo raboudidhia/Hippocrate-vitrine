@@ -4,7 +4,7 @@ import CarouselSection from "../components/CarouselSection";
 export const Services = () => {
   return (
     <div>
-      {/* <CarouselSection /> */}
+      <CarouselSection />
       <NosTarifs />
     </div>
   )
