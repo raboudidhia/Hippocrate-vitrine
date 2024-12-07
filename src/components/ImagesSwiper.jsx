@@ -14,6 +14,7 @@ import {
   hipp7,
   hipp8,
   hipp9,
+  hipp10,
 } from "../assets";
 
 const ImagesSwiper = () => {
@@ -27,6 +28,7 @@ const ImagesSwiper = () => {
     hipp7,
     hipp8,
     hipp9,
+    hipp10,
   ];
 
   return (

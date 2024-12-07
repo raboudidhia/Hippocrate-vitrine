@@ -14,15 +14,15 @@ export const Footer = () => {
 
         <div className="space-y-4 text-sm lg:text-base sm:text-center">
           <div className="flex items-center justify-center mr-20">
-            <i className="fas fa-phone-alt text-teal-500 mr-5 "></i>
+            <i className="fas fa-phone-alt text-[#1F8287] mr-5 "></i>
             <span>+216 98 269 561</span>
           </div>
           <div className="flex items-center justify-center mr-3">
-            <i className="fas fa-envelope text-teal-500 mr-2 ml-2"></i>
+            <i className="fas fa-envelope text-[#1F8287]  mr-2 ml-2"></i>
             <span>hippocratecsc@gmail.com</span>
           </div>
           <div className="flex items-center justify-center">
-            <i className="fas fa-map-marker-alt text-teal-500 mr-2"></i>
+            <i className="fas fa-map-marker-alt text-[#1F8287]  mr-2"></i>
             <span>Bab Saadoune, Tunisia, 1029</span>
           </div>
         </div>
@@ -44,13 +44,13 @@ export const Footer = () => {
           <div className="flex space-x-4">
             <a
               href="https://www.facebook.com/Hippocrate.tunisien"
-              className="w-9 h-9 bg-teal-500 rounded-full flex items-center justify-center hover:bg-teal-400 transition-colors"
+              className="w-9 h-9 bg-[#1F8287]  rounded-full flex items-center justify-center hover:bg-teal-500 transition-colors"
             >
               <i className="fab fa-facebook-f text-white"></i>
             </a>
             <a
               href="#"
-              className="w-9 h-9 bg-teal-500 rounded-full flex items-center justify-center hover:bg-teal-400 transition-colors"
+              className="w-9 h-9 bg-[#1F8287]  rounded-full flex items-center justify-center hover:bg-teal-500 transition-colors"
             >
               <i className="fab fa-instagram text-white"></i>
             </a>
