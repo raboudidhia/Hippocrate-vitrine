@@ -4,6 +4,10 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      colors:{
+        primary : "#3D8287",
+        hippoBlack:"282A2E"
+      },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },

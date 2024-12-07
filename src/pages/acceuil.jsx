@@ -1,12 +1,10 @@
-import hipp2 from "../assets/hipp2.jpg";
-import hipp3 from "../assets/hipp3.jpg";
-import hipp1 from "../assets/hipp1.jpg";
+import CarouselSection from "../components/CarouselSection";
+import InfoSection from "../components/InfoSection";
+import ServicesSection from "../components/ServicesSection";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import "swiper/css";
+import CoworkingPreview from "../components/CoworkingPreview";
 
-export const Acceuil = () => {
+const Acceuil = () => {
   return (
     <div className="relative">
       <Swiper
@@ -18,107 +16,117 @@ export const Acceuil = () => {
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}
-        className="w-full h-[737px] sm:h-[500px] md:h-[600px] lg:h-[850px]"
+        className="w-full h-[737px] md:h-[500px] lg:h-[737px] "
       >
-        {/* Slide 1 */}
         <SwiperSlide>
-          <div className="w-full h-full relative bg-black">
+          <div className="w-full h-[737px] relative bg-black">
             <img
               src={hipp2}
               alt="Coworking space with modern and dynamic design"
               className="absolute inset-0 w-full h-full object-cover opacity-50"
             />
-            <div className="relative z-10 text-white p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center h-full gap-4 lg:ml-9 lg:pt-[10%] xs:pt-[30%] md:pt-[20%] ">
-              {/* Title */}
-              <h1 className="text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] font-normal  font-['Poppins'] capitalize leading-tight">
-                Bienvenue Chez  <br />L’Hippocrate
+            <div className="relative z-10 text-white p-8">
+              <h1 className="w-[958px] h-[163.40px] left-[83px] top-[305.73px] absolute text-white text-[80px] font-normal font-['Poppins'] capitalize leading-[82px] tracking-tight">
+                Bienvenue Chez L’Hippocrate
               </h1>
-              {/* Description */}
-              <p className="mt-2 text-sm sm:text-base font-normal   font-['Poppins']  md:text-lg lg:text-2xl">
+              <p className="w-[958px] h-[81.70px] left-[83px] top-[490px] absolute text-white text-2xl font-normal font-['Poppins'] leading-relaxed tracking-tight">
                 Un espace de coworking moderne et dynamique conçu pour les
-                <br /> étudiants de toutes disciplines.
+                <br />
+                étudiants de toutes disciplines.
               </p>
-              {/* Buttons */}
-              <div className="mt-6 flex flex-col sm:flex-row gap-4 lg:gap-9 lg:ml-5">
+              <div className="absolute left-[115px] top-[600px] flex gap-10">
                 <div
                   onClick={() => (window.location.href = "#contact")}
-                  className="w-full sm:w-auto px-6 py-3 lg:px-24 lg:py-4 md:px-20   bg-[#1f8287] text-white text-center rounded-md shadow-md  font-semibold font-['Poppins'] cursor-pointer hover:bg-[#176e72] transition-all"
+                  className="w-[331.41px] h-[64.07px] bg-[#1f8287] flex items-center justify-center cursor-pointer"
                 >
-                  Contact
+                  <p className="text-white text-base font-semibold font-['Poppins'] uppercase leading-relaxed tracking-wide">
+                    Contact
+                  </p>
                 </div>
+
                 <div
                   onClick={() => (window.location.href = "#services")}
-                  className="w-full sm:w-auto px-6 py-3 lg:px-24 lg:py-4 md:px-20 border border-white text-white text-center  font-semibold font-['Poppins'] rounded-md shadow-md cursor-pointer hover:bg-white hover:text-[#1f8287] transition-all"
+                  className="w-[331.41px] h-[64.07px] bg-[#00adb5]/0 rounded-[3px] border-2 border-white flex items-center justify-center cursor-pointer"
                 >
-                  Nos services
+                  <p className="text-white text-base font-semibold font-['Poppins'] uppercase leading-relaxed tracking-wide">
+                    Nos services
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </SwiperSlide>
 
-        {/* Slide 2 */}
         <SwiperSlide>
-          <div className="w-full h-full relative bg-black">
+          <div className="w-full h-[737px] relative bg-black">
             <img
               src={hipp3}
               alt="Slide 2"
               className="absolute inset-0 w-full h-full object-cover opacity-50"
             />
-            <div className="relative z-10 text-white p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center h-full gap-4 lg:ml-9 lg:pt-[10%] xs:pt-[30%] md:pt-[20%]">
-              <h1 className="text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] font-normal  font-['Poppins'] capitalize leading-tight">
-                Confort et productivité au <br />cœur de votre réussite
+            <div className="relative z-10 text-white p-8">
+              <h1 className="w-[970px] h-[163.40px] left-[83px] top-[305.73px] absolute text-white text-[80px] font-normal font-['Poppins'] capitalize leading-[82px] tracking-tight">
+                Confort et productivité au cœur de votre réussite
               </h1>
-              <p className="mt-2 text-sm sm:text-base font-normal   font-['Poppins']  md:text-lg lg:text-2xl">
+              <p className="w-[958px] h-[81.70px] left-[90px] top-[490px] absolute text-white text-2xl font-normal font-['Poppins'] leading-relaxed tracking-tight">
                 Profitez d’un environnement moderne, équipé et convivial,
-                parfait pour <br />étudier, collaborer et atteindre vos objectifs.
+                parfait pour étudier collaborer et atteindre vos objectifs.
               </p>
-              <div className="mt-6 flex flex-col sm:flex-row gap-4 lg:gap-9 lg:ml-5">
+              <div className="absolute left-[115px] top-[600px] flex gap-10">
                 <div
                   onClick={() => (window.location.href = "#contact")}
-                  className="w-full sm:w-auto px-6 py-3 lg:px-24 lg:py-4 md:px-20   bg-[#1f8287] text-white text-center rounded-md shadow-md  font-semibold font-['Poppins'] cursor-pointer hover:bg-[#176e72] transition-all"
+                  className="w-[331.41px] h-[64.07px] bg-[#1f8287] flex items-center justify-center cursor-pointer"
                 >
-                  Contact
+                  <p className="text-white text-base font-semibold font-['Poppins'] uppercase leading-relaxed tracking-wide">
+                    Contact
+                  </p>
                 </div>
+
                 <div
                   onClick={() => (window.location.href = "#services")}
-                  className="w-full sm:w-auto px-6 py-3 lg:px-24 lg:py-4 md:px-20 border border-white text-white text-center  font-semibold font-['Poppins'] rounded-md shadow-md cursor-pointer hover:bg-white hover:text-[#1f8287] transition-all"
+                  className="w-[331.41px] h-[64.07px] bg-[#00adb5]/0 rounded-[3px] border-2 border-white flex items-center justify-center cursor-pointer"
                 >
-                  Nos services
+                  <p className="text-white text-base font-semibold font-['Poppins'] uppercase leading-relaxed tracking-wide">
+                    Nos services
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </SwiperSlide>
 
-        {/* Slide 3 */}
         <SwiperSlide>
-          <div className="w-full h-full relative bg-black">
+          <div className="w-full h-[737px] relative bg-black">
             <img
               src={hipp1}
               alt="Slide 3"
               className="absolute inset-0 w-full h-full object-cover opacity-50"
             />
-            <div className="relative z-10 text-white p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center h-full gap-4 lg:ml-9 lg:pt-[10%] xs:pt-[30%] md:pt-[20%]">
-              <h1 className="text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] font-normal  font-['Poppins'] capitalize leading-tight">
+            <div className="relative z-10 text-white p-8">
+              <h1 className="w-[1100px] h-[163.40px] left-[83px] top-[305.73px] absolute text-white text-[80px] font-normal font-['Poppins'] capitalize leading-[82px] tracking-tight">
                 Votre partenaire idéal pour travailler, créer et innover
               </h1>
-              <p className="mt-2 text-sm sm:text-base font-normal   font-['Poppins']  md:text-lg lg:text-2xl">
+              <p className="w-[958px] h-[81.70px] left-[95px] top-[490px] absolute text-white text-2xl font-normal font-['Poppins'] leading-relaxed tracking-tight">
                 Un lieu moderne et convivial pour étudier, collaborer et réussir
-                avec une <br /> connexion à haut débit.
+                avec une connexion à haut débit.
               </p>
-              <div className="mt-6 flex flex-col sm:flex-row gap-4 lg:gap-9 lg:ml-5">
+              <div className="absolute left-[115px] top-[590px] flex gap-10">
                 <div
                   onClick={() => (window.location.href = "#contact")}
-                  className="w-full sm:w-auto px-6 py-3 lg:px-24 lg:py-4 md:px-20   bg-[#1f8287] text-white text-center rounded-md shadow-md  font-semibold font-['Poppins'] cursor-pointer hover:bg-[#176e72] transition-all"
+                  className="w-[331.41px] h-[64.07px] bg-[#1f8287] flex items-center justify-center cursor-pointer"
                 >
-                  Contact
+                  <p className="text-white text-base font-semibold font-['Poppins'] uppercase leading-relaxed tracking-wide">
+                    Contact
+                  </p>
                 </div>
+
                 <div
                   onClick={() => (window.location.href = "#services")}
-                  className="w-full sm:w-auto px-6 py-3 lg:px-24 lg:py-4 md:px-20 border border-white text-white text-center  font-semibold font-['Poppins'] rounded-md shadow-md cursor-pointer hover:bg-white hover:text-[#1f8287] transition-all"
+                  className="w-[331.41px] h-[64.07px] bg-[#00adb5]/0 rounded-[3px] border-2 border-white flex items-center justify-center cursor-pointer"
                 >
-                  Nos services
+                  <p className="text-white text-base font-semibold font-['Poppins'] uppercase leading-relaxed tracking-wide">
+                    Nos services
+                  </p>
                 </div>
               </div>
             </div>
