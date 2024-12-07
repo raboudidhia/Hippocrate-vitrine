@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 import NosTarifs from "./pages/NosTarifs";
+import Services from "./pages/Services";
 
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
                 <Routes>
                     <Route path="/" element={<Acceuil />} />
                     <Route path="/tarifs" element={<NosTarifs />} />
+                    <Route path="/services" element={<Services />} />
                     <Route path="/Contact" element={<Contact />} />
                 </Routes>
             </main>
