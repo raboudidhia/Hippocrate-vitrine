@@ -36,9 +36,9 @@ const Navbar = () => {
     >
       <div className="flex items-center">
         <img className="w-[40px] h-[50px] mr-4" src={logo} alt="Logo" />
-        <div className="text-white text-[24px] font-semibold font-['Poppins']">
+        <Link to="/" className="text-white text-[24px] font-semibold font-['Poppins']">
           Hippocrate
-        </div>
+        </Link>
       </div>
       <div className="hidden md:flex space-x-8">
         <Link

@@ -10,7 +10,7 @@ import snack_icon from "../assets/snack.png";
 
 const InfoSection = () => {
   return (
-    <div className="w-full flex flex-col-reverse md:flex-row md:gap-36 md:justify-center md:max-w-[1100px] md:mx-auto items-center px-2 gap-6 py-20">
+    <div className="w-full flex flex-col-reverse md:flex-row md:gap-36 md:justify-center md:max-w-[1100px] md:mx-auto items-center px-6 md:px-2 gap-6 py-20">
       <div
         className="md:h-[500px] h-[350px] w-[min(70%,400px)] rounded-lg relative shrink-0 "
         style={{ backgroundImage: `url(${big})`, backgroundSize: "100% 100%" }}
@@ -46,7 +46,7 @@ const InfoSection = () => {
         <ul className="space-y-4">
           <li>
             <div className="flex flex-row gap-6">
-              <div className="bg-primary h-14 w-14 rounded-2xl p-[0.8rem] shrink-0">
+              <div className="bg-primary h-[3.25rem] w-14 rounded-2xl p-[0.8rem] shrink-0">
                 <img
                   src={ic_clock_icon}
                   className="w-full h-full translate-x-[0.125rem]"
@@ -64,7 +64,7 @@ const InfoSection = () => {
           </li>
           <li>
             <div className="flex flex-row gap-6">
-              <div className="bg-primary h-14 w-14 rounded-2xl p-[0.8rem] shrink-0 ">
+              <div className="bg-primary h-14 w-14 rounded-2xl p-[0.9rem] shrink-0 ">
                 <img src={snack_icon} className="w-full h-full " />
               </div>
               <div>
