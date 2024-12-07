@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import CarouselSection from '../components/CarouselSection'
-import TarifCard from '../components/TarifCard'
+//import TarifCard from '../components/TarifCard'
 import TarifGroupe from '../components/TarifGroupe'
 import data from "../../data.json";
 import SelecteurDuree from '../components/SelecteurDuree';

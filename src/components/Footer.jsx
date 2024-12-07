@@ -14,11 +14,11 @@ export const Footer = () => {
 
         <div className="space-y-4 text-sm lg:text-base sm:text-center">
           <div className="flex items-center justify-center mr-20">
-            <i className="fas fa-phone-alt text-teal-500 mr-2 ml-2"></i>
+            <i className="fas fa-phone-alt text-teal-500 mr-5 "></i>
             <span>+216 98 269 561</span>
           </div>
           <div className="flex items-center justify-center mr-3">
-            <i className="fas fa-envelope text-teal-500 mr-2"></i>
+            <i className="fas fa-envelope text-teal-500 mr-2 ml-2"></i>
             <span>hippocratecsc@gmail.com</span>
           </div>
           <div className="flex items-center justify-center">

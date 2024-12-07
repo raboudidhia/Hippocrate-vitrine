@@ -24,5 +24,5 @@ export {
   logo,
   close,
 
-  // ...export other images as needed...
+ 
 };

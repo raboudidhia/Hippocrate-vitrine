@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 
 function SelecteurDuree({setSelectedTarif}) {
     const [selected, setSelected] = useState("Jour");
@@ -25,4 +26,9 @@ function SelecteurDuree({setSelectedTarif}) {
         </div>
     );
 }
+
+SelecteurDuree.propTypes = {
+    setSelectedTarif: PropTypes.func.isRequired,
+};
+
 export default SelecteurDuree;
