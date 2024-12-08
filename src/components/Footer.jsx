@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <div className="w-full bg-[#1f1f1f] py-4 lg:py-8 text-white">
       <div className="max-w-7xl mx-auto px-4 flex flex-col sm:items-center sm:justify-center lg:flex-row lg:justify-between lg:items-center">
-        <div className="flex items-center mb-6 lg:mb-0 sm:justify-center xs:justify-center ">
+        <div className="flex items-center mb-6 lg:mb-0 justify-center xs:justify-center ">
           <img className="w-[40px] h-[50px]" src={logo} alt=" logo" />
           <h1 className="ml-4 text-2xl lg:text-2xl font-semibold font-['Poppins']">
             Hippocrate
