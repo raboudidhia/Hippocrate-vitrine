@@ -74,18 +74,18 @@ export const Acceuil = () => {
                 étudier, collaborer et atteindre vos objectifs.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-4 lg:gap-9 lg:ml-5">
-                <div
-                  onClick={() => (window.location.href = "/contact")}
+                <Link
+                  to="/contact"
                   className="w-full sm:w-auto px-6 py-3 lg:px-24 lg:py-4 md:px-20   bg-[#1f8287] text-white text-center rounded-md shadow-md  font-semibold font-['Poppins'] cursor-pointer hover:bg-[#176e72] transition-all"
                 >
                   Contact
-                </div>
-                <div
-                  onClick={() => (window.location.href = "/services")}
+                </Link>
+                <Link
+                  to="/services"
                   className="w-full sm:w-auto px-6 py-3 lg:px-24 lg:py-4 md:px-20 border border-white text-white text-center  font-semibold font-['Poppins'] rounded-md shadow-md cursor-pointer hover:bg-white hover:text-[#1f8287] transition-all"
                 >
                   Nos services
-                </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -107,18 +107,18 @@ export const Acceuil = () => {
                 avec une <br className="hidden lg:block" /> connexion à haut débit.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-4 lg:gap-9 lg:ml-5">
-                <div
-                  onClick={() => (window.location.href = "/contact")}
+                <Link
+                  to="/contact"
                   className="w-full sm:w-auto px-6 py-3 lg:px-24 lg:py-4 md:px-20   bg-[#1f8287] text-white text-center rounded-md shadow-md  font-semibold font-['Poppins'] cursor-pointer hover:bg-[#176e72] transition-all"
                 >
                   Contact
-                </div>
-                <div
-                  onClick={() => (window.location.href = "/services")}
+                </Link>
+                <Link
+                  to="/services"
                   className="w-full sm:w-auto px-6 py-3 lg:px-24 lg:py-4 md:px-20 border border-white text-white text-center  font-semibold font-['Poppins'] rounded-md shadow-md cursor-pointer hover:bg-white hover:text-[#1f8287] transition-all"
                 >
                   Nos services
-                </div>
+                </Link>
               </div>
             </div>
           </div>
