@@ -8,6 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [iswhite,setIswhite] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +20,11 @@ const Navbar = () => {
         setIsVisible(true);
       }
       setLastScrollY(currentScrollY);
+      if(currentScrollY>window.innerHeight *0.8){
+        setIswhite(true);
+      }else{
+        setIswhite(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -32,7 +38,7 @@ const Navbar = () => {
     <nav
       className={`w-full h-[77px] fixed top-0 z-50 flex items-center justify-between px-6 md:px-14 transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
-      } bg-gray-400`}
+      } ${iswhite?'bg-primary shadow-lg text-black':''}`}
     >
       <div className="flex items-center">
         <img className="w-[40px] h-[50px] mr-4" src={logo} alt="Logo" />
