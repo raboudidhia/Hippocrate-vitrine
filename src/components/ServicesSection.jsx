@@ -14,7 +14,7 @@ const ServicesSection = () => {
         connexion Wi-Fi ultra-rapide et un Coffee <br /> Shop accueillant,
         combinez Productivité et plaisir dans un cadre unique.
       </p>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-36">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-36">
         <div className="flex flex-col gap-10">
           {[data.composition[0], data.composition[2]].map((obj, index) => (
             <ServiceCard obj={obj} key={index} />

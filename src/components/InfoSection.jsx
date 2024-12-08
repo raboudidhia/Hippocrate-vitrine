@@ -10,7 +10,7 @@ import snack_icon from "../assets/snack.png";
 
 const InfoSection = () => {
   return (
-    <div className="w-full flex flex-col-reverse md:flex-row md:gap-36 md:justify-center md:max-w-[1100px] md:mx-auto items-center px-6 md:px-2 gap-6 py-20">
+    <div className="w-full flex flex-col-reverse lg:flex-row md:gap-36 md:justify-center md:max-w-[1100px] md:mx-auto items-center px-6 md:px-14 lg:px-2 gap-6 py-20">
       <div
         className="md:h-[500px] h-[350px] w-[min(70%,400px)] rounded-lg relative shrink-0 "
         style={{ backgroundImage: `url(${big})`, backgroundSize: "100% 100%" }}
