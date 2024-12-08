@@ -10,7 +10,7 @@ import Services from "./pages/Services";
 
 
 const App = () => (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-screen overflow-x-hidden">
         <Router>
             <Navbar />
 
