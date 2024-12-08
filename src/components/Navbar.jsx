@@ -2,102 +2,112 @@ import { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
 import menu from "../assets/menu.svg";
 import close from "../assets/close.svg";
+import { IoMdClose, IoMdMenu } from "react-icons/io";
+
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [iswhite,setIswhite] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [isSolid, setIsSolid] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-      setLastScrollY(currentScrollY);
-      if(currentScrollY>window.innerHeight *0.8){
-        setIswhite(true);
-      }else{
-        setIswhite(false);
-      }
-    };
+            if (currentScrollY > lastScrollY) {
+                setIsVisible(false);
+            } else {
+                setIsVisible(true);
+            }
+            setLastScrollY(currentScrollY);
+            if (currentScrollY > window.innerHeight * 0.8) {
+                setIsSolid(true);
+            } else {
+                setIsSolid(false);
+            }
+        };
 
-    window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [lastScrollY]);
 
-  return (
-    <nav
-      className={`w-full h-[77px] fixed top-0 z-50 flex items-center justify-between px-6 md:px-14 transition-transform duration-300 ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      } ${iswhite?'bg-primary shadow-lg text-black':''}`}
-    >
-      <div className="flex items-center">
-        <img className="w-[40px] h-[50px] mr-4" src={logo} alt="Logo" />
-        <Link to="/" className="text-white text-[24px] font-semibold font-['Poppins']">
-          Hippocrate
-        </Link>
-      </div>
-      <div className="hidden md:flex space-x-8">
-        <Link
-          to="/"
-          className="mt-2 text-white text-sm font-bold font-['Poppins'] tracking-tight hover:text-[#1f8287]"
+    return (
+        <nav
+            className={`w-full h-[77px] fixed top-0 z-50 flex items-center justify-between px-6 md:px-14 transition-transform duration-300 ${
+                isVisible ? "translate-y-0" : "-translate-y-full"
+            } ${isSolid ? "bg-primary shadow-lg text-black" : ""}`}
         >
-          Accueil
-        </Link>
-        <Link
-          to="/services"
-          className="mt-2 text-[#e6e6e6] text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
-        >
-          Services
-        </Link>
-        <Link
-          to="/contact"
-          className="mt-2 text-[#e6e6e6] text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
-        >
-          Contact
-        </Link>
-      </div>
-      <div className="md:hidden">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="focus:outline-none"
-        >
-          <img src={isOpen ? close : menu} alt="Menu" className="w-3 h-3" />
-        </button>
-      </div>
-      {isOpen && (
-        <div className="absolute top-[77px] right-0 w-full flex flex-col items-center space-y-4 py-4 md:hidden">
-          <Link
-            to="/"
-            className="text-white text-sm font-bold font-['Poppins'] tracking-tight hover:text-[#1f8287]"
-          >
-            Accueil
-          </Link>
-          <Link
-            to="/services"
-            className="text-[#e6e6e6] text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
-          >
-            Services
-          </Link>
-          <Link
-            to="/contact"
-            className="text-white text-sm font-semibold font-['Poppins'] tracking-tight bg-[#1f8287] px-4 py-2 hover:text-[#1f8287] hover:bg-white"
-          >
-            Contact
-          </Link>
-        </div>
-      )}
-    </nav>
-  );
+            <div className="flex items-center">
+                <img className="w-[40px] h-[50px] mr-4" src={logo} alt="Logo" />
+                <Link
+                    to="/"
+                    className="text-white text-[24px] font-semibold font-['Poppins']"
+                >
+                    Hippocrate
+                </Link>
+            </div>
+            <div className="hidden md:flex items-center space-x-8">
+                <Link
+                    to="/"
+                    className="mt-2 md:mt-0 text-white text-sm font-bold font-['Poppins'] tracking-tight hover:text-[#1f8287]"
+                >
+                    Accueil
+                </Link>
+                <Link
+                    to="/services"
+                    className="mt-2 md:mt-0 text-[#e6e6e6] text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
+                >
+                    Services
+                </Link>
+                <Link
+                    to="/contact"
+                    className="mt-2 md:mt-0 text-[#e6e6e6] text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
+                >
+                    Contact
+                </Link>
+            </div>
+            <div className="md:hidden">
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="focus:outline-none"
+                >
+                    {/* <img
+                        src={isOpen ? close : menu}
+                        alt="Menu"
+                        className="w-3 h-3"
+                    /> */}
+                    {isOpen?<IoMdClose className="text-white text-3xl" />:<IoMdMenu className="text-white text-3xl" />}
+                </button>
+            </div>
+            {isOpen && (
+                <div className="absolute top-[77px] right-0 w-full flex flex-col items-center space-y-4 py-4 md:hidden">
+                    <Link
+                        to="/"
+                        className="text-white text-sm font-bold font-['Poppins'] tracking-tight hover:text-[#1f8287]"
+                    >
+                        Accueil
+                    </Link>
+                    <Link
+                        to="/services"
+                        className="text-[#e6e6e6] text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
+                    >
+                        Services
+                    </Link>
+                    <Link
+                        to="/contact"
+                        className="text-white text-sm font-semibold font-['Poppins'] tracking-tight bg-[#1f8287] px-4 py-2 hover:text-[#1f8287] hover:bg-white"
+                    >
+                        Contact
+                    </Link>
+                </div>
+            )}
+        </nav>
+    );
 };
 
 export default Navbar;
