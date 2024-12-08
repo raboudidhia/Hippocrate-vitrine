@@ -4,9 +4,10 @@ import menu from "../assets/menu.svg";
 import close from "../assets/close.svg";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+    const location = useLocation();
     const [isOpen, setIsOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -54,19 +55,19 @@ const Navbar = () => {
             <div className="hidden md:flex items-center space-x-8">
                 <Link
                     to="/"
-                    className="mt-2 md:mt-0 text-white text-sm font-bold font-['Poppins'] tracking-tight hover:text-[#1f8287]"
+                    className={`mt-2 md:mt-0 text-white text-sm  font-['Poppins'] tracking-tight hover:text-[#1f8287] ${location.pathname=='/'? "font-bold":"font-normal"}`}
                 >
                     Accueil
                 </Link>
                 <Link
                     to="/services"
-                    className="mt-2 md:mt-0 text-[#e6e6e6] text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
+                    className={`mt-2 md:mt-0 text-[#e6e6e6] text-sm  font-['Poppins'] tracking-tight hover:text-[#1f8287] ${location.pathname=='/services'? "font-bold":"font-normal"}`}
                 >
                     Services
                 </Link>
                 <Link
                     to="/contact"
-                    className="mt-2 md:mt-0 text-[#e6e6e6] text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
+                    className={`mt-2 md:mt-0 text-[#e6e6e6] text-sm  font-['Poppins'] tracking-tight hover:text-[#1f8287] ${location.pathname=='/contact'? "font-bold":"font-normal"}`}
                 >
                     Contact
                 </Link>
@@ -81,35 +82,43 @@ const Navbar = () => {
                         alt="Menu"
                         className="w-3 h-3"
                     /> */}
-                   <IoMdMenu className="text-white text-3xl" />
+                    <IoMdMenu className="text-white text-3xl" />
                 </button>
             </div>
 
-                <div className={`absolute top-0 bg-white h-screen flex justify-start text-black flex-col w-3/4 items-center py-20 md:hidden trnasition-all ease-out duration-300 ${isOpen?"right-0":"-right-[100vw]"}`}>
+            <div
+                className={`absolute top-0 bg-white h-screen flex justify-start text-black flex-col w-3/4 items-center py-20 md:hidden trnasition-all ease-out duration-300 ${
+                    isOpen ? "right-0" : "-right-[100vw]"
+                }`}
+            >
                 <button className="focus:outline-none">
-                  <IoMdClose className="text-black text-3xl absolute top-4 right-4"
-                  onClick={()=>setIsOpen(false)} />
+                    <IoMdClose
+                        className="text-black text-3xl absolute top-4 right-4"
+                        onClick={() => setIsOpen(false)}
+                    />
                 </button>
-                    <Link
-                        to="/"
-                        className="text-center w-full py-4 border-b border-l border-gray-300 text-sm font-bold font-['Poppins'] tracking-tight hover:text-[#1f8287]"
-                    >
-                        Accueil
-                    </Link>
-                    <Link
-                        to="/services"
-                        className="text-center w-full py-4 border-b border-l border-gray-300 text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
-                    >
-                        Services
-                    </Link>
-                    <Link
-                        to="/contact"
-                        className="text-center w-full py-4 border-b border-l  border-gray-300 text-sm font-normal font-['Poppins'] tracking-tight hover:text-[#1f8287]"
-                    >
-                        Contact
-                    </Link>
-                </div>
-
+                <Link
+                    to="/"
+                    className={`text-center w-full py-4 border-b  border-gray-300 text-sm  font-['Poppins'] tracking-tight hover:text-[#1f8287] ${location.pathname=='/'? "text-primary font-bold":"text-black"} `}
+                    onClick={() => setIsOpen(false)}
+                >
+                    Accueil
+                </Link>
+                <Link
+                    to="/services"
+                    className={`text-center w-full py-4 border-b  border-gray-300 text-sm  font-['Poppins'] tracking-tight hover:text-[#1f8287] ${location.pathname=='/services'? "text-primary font-bold":"text-black"}`}
+                    onClick={() => setIsOpen(false)}
+                >
+                    Services
+                </Link>
+                <Link
+                    to="/contact"
+                    className={`text-center w-full py-4 border-b   border-gray-300 text-sm  font-['Poppins'] tracking-tight hover:text-[#1f8287] ${location.pathname=='/contact'? "text-primary font-bold":"text-black"}`}
+                    onClick={() => setIsOpen(false)}
+                >
+                    Contact
+                </Link>
+            </div>
         </nav>
     );
 };
