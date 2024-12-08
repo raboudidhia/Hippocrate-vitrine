@@ -50,7 +50,7 @@ const Navbar = () => {
   }, [lastScrollY, isFixed]);
     return (
         <nav
-            className={`w-full max-w-[100vw] overflow-x-hidden h-[77px]  top-0 z-50 flex items-center justify-between px-6 md:px-14 transition-transform duration-300 ${
+            className={`w-full h-[77px]  top-0 z-50 flex items-center justify-between px-6 md:px-14 transition-transform duration-300 ${
                 isVisible ? "translate-y-0" : "-translate-y-full"
             } ${isSolid ? "bg-primary shadow-lg text-black" : ""} ${isFixed? "fixed":"absolute"}`}
         >
@@ -98,7 +98,7 @@ const Navbar = () => {
             </div>
 
             <div
-                className={`absolute top-0 bg-white h-screen flex justify-start text-black flex-col w-3/4 items-center py-20 md:hidden trnasition-all ease-out duration-300 ${
+                className={`fixed top-0 bg-white h-screen flex justify-start text-black flex-col w-3/4 items-center py-20 md:hidden trnasition-all ease-out duration-300 ${
                     isOpen ? "right-0" : "-right-[100vw]"
                 }`}
             >
