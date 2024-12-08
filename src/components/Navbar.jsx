@@ -12,36 +12,47 @@ const Navbar = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isSolid, setIsSolid] = useState(false);
+    const [isFixed,setIsFixed] = useState(false);
 
+    
     useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
+      const handleScroll = () => {
+          const currentScrollY = window.scrollY;
 
-            if (currentScrollY > lastScrollY) {
-                setIsVisible(false);
-            } else {
-                setIsVisible(true);
-            }
-            setLastScrollY(currentScrollY);
-            if (currentScrollY > window.innerHeight * 0.8) {
-                setIsSolid(true);
-            } else {
-                setIsSolid(false);
-            }
-        };
+          // Fixed navbar logic when scrolling past 80% of the viewport height
+          if (currentScrollY > window.innerHeight * 0.8 && !isFixed) {
+              setIsFixed(true);
+          } else if (currentScrollY <= window.innerHeight * 0.8 && isFixed) {
+              setIsFixed(false);
+          }
 
-        window.addEventListener("scroll", handleScroll);
+          // Visibility logic (show/hide navbar on scroll)
+          if (currentScrollY > lastScrollY && currentScrollY > window.innerHeight * 0.8) {
+              setIsVisible(false);
+          } else {
+              setIsVisible(true);
+          }
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [lastScrollY]);
+          // Set the background color when scrolling past 80% of the page
+          if (currentScrollY > window.innerHeight * 0.8) {
+              setIsSolid(true);
+          } else {
+              setIsSolid(false);
+          }
 
+          setLastScrollY(currentScrollY);
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+          window.removeEventListener("scroll", handleScroll);
+      };
+  }, [lastScrollY, isFixed]);
     return (
         <nav
-            className={`w-full h-[77px] fixed top-0 z-50 flex items-center justify-between px-6 md:px-14 transition-transform duration-300 ${
+            className={`w-full h-[77px]  top-0 z-50 flex items-center justify-between px-6 md:px-14 transition-transform duration-300 ${
                 isVisible ? "translate-y-0" : "-translate-y-full"
-            } ${isSolid ? "bg-primary shadow-lg text-black" : ""}`}
+            } ${isSolid ? "bg-primary shadow-lg text-black" : ""} ${isFixed? "fixed":"absolute"}`}
         >
             <div className="flex items-center">
                 <img className="w-[40px] h-[50px] mr-4" src={logo} alt="Logo" />
