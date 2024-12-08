@@ -3,7 +3,7 @@ import { hipp9 } from "../assets";
 
 export const Contact1 = () => {
   return (
-    <div className="w-full h-screen relative bg-black">
+    <div className="w-full h-[737px] sm:h-[500px] md:h-[600px] lg:h-[850px] relative bg-black">
       <img
         src={hipp9}
         alt="Coworking space with modern and dynamic design"
