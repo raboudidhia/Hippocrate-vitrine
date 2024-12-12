@@ -1,7 +1,12 @@
 
+import NosTarifs from "../components/NosTarifs";
+import CarouselSection from "../components/CarouselSection";
 export const Services = () => {
   return (
-    <div>Services</div>
+    <div>
+      <CarouselSection />
+      <NosTarifs />
+    </div>
   )
 }
 export default Services;

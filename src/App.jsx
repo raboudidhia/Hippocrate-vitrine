@@ -3,27 +3,27 @@ import Footer from "./components/Footer";
 import Acceuil from "./pages/acceuil";
 import Contact from "./pages/Contact";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-
-import NosTarifs from "./pages/NosTarifs";
-
+import ScrollToTop from "./components/ScrollToTop";
+import Services from "./pages/Services";
 
 const App = () => (
-    <div className="flex flex-col min-h-screen">
-        <Router>
-            <Navbar />
+  <div className="flex flex-col min-h-screen">
+    <Router>
+    <ScrollToTop />
+      <Navbar />
 
-            <main className="flex-grow">
-                <Routes>
-                    <Route path="/" element={<Acceuil />} />
-                    <Route path="/tarifs" element={<NosTarifs />} />
-                    <Route path="/Contact" element={<Contact />} />
-                </Routes>
-            </main>
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Acceuil />} />
 
-            <Footer />
-        </Router>
-    </div>
+          <Route path="/services" element={<Services />} />
+          <Route path="/Contact" element={<Contact />} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </Router>
+  </div>
 );
 
 export default App;

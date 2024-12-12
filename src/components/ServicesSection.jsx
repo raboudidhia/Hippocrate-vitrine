@@ -3,7 +3,7 @@ import { ServiceCard } from "./ServiceCard";
 
 const ServicesSection = () => {
   return (
-    <div className="py-4 flex-col items-center">
+    <div className="py-4 flex-col items-center pb-10">
       <h2 className="md:text-[52px] font-bold text-[26px] text-center md:font-[600] py-4">
         Composition de l’espace
       </h2>
@@ -14,7 +14,7 @@ const ServicesSection = () => {
         connexion Wi-Fi ultra-rapide et un Coffee <br /> Shop accueillant,
         combinez Productivité et plaisir dans un cadre unique.
       </p>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-36">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-36">
         <div className="flex flex-col gap-10">
           {[data.composition[0], data.composition[2]].map((obj, index) => (
             <ServiceCard obj={obj} key={index} />
