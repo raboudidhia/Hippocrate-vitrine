@@ -1,12 +1,13 @@
 import data from "../../data.json";
 import { ServiceCard } from "./ServiceCard";
-
+import image0 from "../assets/image0.png"
 const ServicesSection = () => {
   return (
     <div className="py-4 flex-col items-center pb-10">
       <h2 className="md:text-[52px] font-bold text-[26px] text-center md:font-[600] py-4">
         Composition de l’espace
       </h2>
+      <img className=" mx-auto "src={image0} alt="" />
       <p className="text-center md:text-[20px] text-[18px] max-w-[1250px] mx-auto py-4 pb-8 px-4 md:px-0 md:leading-[38px]">
         Entre salle polyvalentes , grande salle de lecture, terrasse en plain
         air et salle annexe,chaque coin de <br className="hidden md:block" />{" "}

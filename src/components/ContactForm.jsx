@@ -1,4 +1,4 @@
-// ContactForm.jsx
+
 export const ContactForm = () => {
   return (
     <div className="w-full bg-white flex justify-center py-16">
@@ -16,7 +16,7 @@ export const ContactForm = () => {
             </div>
             <div className="mb-4">
               <i className="fas fa-envelope mr-4"></i>{" "}
-              hippocrate.tunisien@gmail.com
+              hippocratecsc@gmail.com
             </div>
             <div>
               <i className="fas fa-map-marker-alt mr-4"></i> Bab Saadoune,

@@ -34,8 +34,8 @@ export const Acceuil = () => {
               </h1>
 
               <p className="mt-2 text-sm sm:text-base font-normal   font-['Poppins']  md:text-lg lg:text-2xl">
-                Un espace de coworking moderne et dynamique conçu pour les
-                <br className="hidden lg:block" /> étudiants de toutes disciplines.
+              Un espace de costudying moderne et convivial, conçu pour accueillir des personnes de toutes disciplines <br className="hidden lg:block" /> et horizons, favorisant concentration et collaboration.
+               
               </p>
 
               <div className="mt-6 flex flex-col sm:flex-row gap-4 lg:gap-9 lg:ml-5">

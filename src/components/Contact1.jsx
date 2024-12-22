@@ -29,3 +29,4 @@ export const Contact1 = () => {
     </div>
   );
 };
+export default Contact1;

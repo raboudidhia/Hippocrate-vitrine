@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-//import TarifCard from '../components/TarifCard'
 import TarifGroupe from "./TarifGroupe";
 import data from "../../data.json";
 import SelecteurDuree from "./SelecteurDuree";
