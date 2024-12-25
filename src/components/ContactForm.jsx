@@ -1,8 +1,56 @@
+import { useState } from "react";
+import emailjs from "emailjs-com";
 
 export const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    nom: "",
+    prenom: "",
+    email: "",
+    phone: "+216",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const templateParams = {
+      first_name: formData.prenom,
+      last_name: formData.nom,
+      phone_number: formData.phone, 
+      email_address: formData.email,
+      message: formData.message,
+    };
+
+    emailjs
+      .send(
+        "service_6xrsnzq",
+        "template_1hkuv0y",
+        templateParams,
+        "nbR1FXXHMA6ZplXEv"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Message sent successfully!");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("An error occurred. Please try again.");
+        }
+      );
+  };
+
   return (
-    <div className="w-full bg-white flex justify-center py-16">
-      <div className="max-w-screen-lg w-full bg-white rounded-lg shadow-md flex flex-col md:flex-row overflow-hidden">
+    <div className="w-full bg-white flex justify-center py-16" id="contact">
+      <div className="max-w-screen-lg w-[95%] bg-white rounded-lg shadow-md flex flex-col md:flex-row overflow-hidden">
         <div className="w-full md:w-2/5 bg-[#1f1f1f] text-white p-6 md:p-8 flex flex-col justify-between">
           <div>
             <h2 className="text-2xl font-semibold font-['Poppins'] mb-3">
@@ -15,8 +63,7 @@ export const ContactForm = () => {
               <i className="fas fa-phone-alt mr-4"></i> +216 98 269 561
             </div>
             <div className="mb-4">
-              <i className="fas fa-envelope mr-4"></i>{" "}
-              hippocratecsc@gmail.com
+              <i className="fas fa-envelope mr-4"></i> hippocratecsc@gmail.com
             </div>
             <div>
               <i className="fas fa-map-marker-alt mr-4"></i> Bab Saadoune,
@@ -25,13 +72,13 @@ export const ContactForm = () => {
           </div>
           <div className="flex space-x-4 mt-8">
             <a
-              href="https://www.facebook.com/Hippocrate.tunisien"
+              href="https://www.facebook.com/profile.php?id=100090343347795&mibextid=ZbWKwL"
               className="w-9 h-9 bg-[#1F8287] rounded-full flex items-center justify-center hover:bg-teal-500 transition-colors"
             >
               <i className="fab fa-facebook-f"></i>
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/hippocrate.officiel?igsh=MWU4ZGt1aHQ2NDRudw%3D%3D"
               className="w-9 h-9 bg-[#1F8287] rounded-full flex items-center justify-center hover:bg-teal-500 transition-colors"
             >
               <i className="fab fa-instagram"></i>
@@ -40,7 +87,7 @@ export const ContactForm = () => {
         </div>
 
         <div className="flex-1 p-6 md:p-8">
-          <form className="flex flex-col">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div>
                 <label
@@ -51,8 +98,11 @@ export const ContactForm = () => {
                 </label>
                 <input
                   id="nom"
+                  name="nom"
                   type="text"
                   className="w-full border-b-2 border-gray-300 focus:border-teal-500 outline-none py-1"
+                  value={formData.nom}
+                  onChange={handleChange}
                 />
               </div>
               <div>
@@ -64,8 +114,11 @@ export const ContactForm = () => {
                 </label>
                 <input
                   id="prenom"
+                  name="prenom"
                   type="text"
                   className="w-full border-b-2 border-gray-300 focus:border-teal-500 outline-none py-1"
+                  value={formData.prenom}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -79,8 +132,11 @@ export const ContactForm = () => {
               </label>
               <input
                 id="email"
+                name="email"
                 type="email"
                 className="w-full border-b-2 border-gray-300 focus:border-teal-500 outline-none py-1"
+                value={formData.email}
+                onChange={handleChange}
               />
             </div>
 
@@ -93,9 +149,11 @@ export const ContactForm = () => {
               </label>
               <input
                 id="phone"
+                name="phone"
                 type="text"
-                defaultValue="+216"
+                defaultValue={formData.phone}
                 className="w-full border-b-2 border-gray-300 focus:border-teal-500 outline-none py-1"
+                onChange={handleChange}
               />
             </div>
 
@@ -108,9 +166,12 @@ export const ContactForm = () => {
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows="2"
                 className="w-full border-b-2 border-gray-300 focus:border-teal-500 outline-none py-2 resize-none"
                 placeholder="Écrivez votre message"
+                value={formData.message}
+                onChange={handleChange}
               ></textarea>
             </div>
 
@@ -128,3 +189,4 @@ export const ContactForm = () => {
     </div>
   );
 };
+export default ContactForm;

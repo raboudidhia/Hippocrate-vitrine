@@ -43,13 +43,13 @@ export const Footer = () => {
           <span className="text-base lg:text-lg mb-4">Réseaux Sociaux</span>
           <div className="flex space-x-4">
             <a
-              href="https://www.facebook.com/Hippocrate.tunisien"
+              href="https://www.facebook.com/profile.php?id=100090343347795&mibextid=ZbWKwL"
               className="w-9 h-9 bg-[#1F8287]  rounded-full flex items-center justify-center hover:bg-teal-500 transition-colors"
             >
               <i className="fab fa-facebook-f text-white"></i>
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/hippocrate.officiel?igsh=MWU4ZGt1aHQ2NDRudw%3D%3D"
               className="w-9 h-9 bg-[#1F8287]  rounded-full flex items-center justify-center hover:bg-teal-500 transition-colors"
             >
               <i className="fab fa-instagram text-white"></i>
