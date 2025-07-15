@@ -43,7 +43,7 @@ const ImagesSwiper = () => {
         slidesPerView={3}
         loop={true}
         autoplay={{
-          delay: 1500,
+          delay: 1000,
           disableOnInteraction: false,
         }}
         coverflowEffect={{
