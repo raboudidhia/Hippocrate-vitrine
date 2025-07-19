@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hippocrate-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hippocrate-frontend
+  template:
+    metadata:
+      labels:
+        app: hippocrate-frontend
+    spec:
+      containers:
+      - name: hippocrate-frontend
+        image: hippocrate-frontend:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
+        env:
+        - name: VITE_API_URL
+          value: "http://hippocrate-backend-service:5000/api"

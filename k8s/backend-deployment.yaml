@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hippocrate-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hippocrate-backend
+  template:
+    metadata:
+      labels:
+        app: hippocrate-backend
+    spec:
+      containers:
+      - name: hippocrate-backend
+        image: hippocrate-backend:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
+        env:
+        - name: MONGODB_URI
+          value: "mongodb://mongo:27017/hippocrate"
+        - name: EMAIL_USER
+          value: "dhiaraboudi1@gmail.com"
+        - name: EMAIL_PASS
+          value: "tygv reqz jeif rfce"
+        - name: JWT_SECRET
+          value: "mySuperSecretKey123"
+          
