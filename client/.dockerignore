@@ -1,0 +1,16 @@
+
+node_modules
+
+*.log
+*.env
+.env.*
+
+.git
+.gitignore
+
+dist
+.vite
+.cache
+
+Dockerfile
+README.md
