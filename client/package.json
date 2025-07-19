@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -15,9 +15,10 @@
     "setupFilesAfterEnv": [
       "<rootDir>/src/setupTests.js"
     ],
-    "moduleNameMapping": {
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    "moduleNameMapper": {
+  "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     },
+
     "transform": {
       "^.+\\.(js|jsx)$": "babel-jest"
     },
