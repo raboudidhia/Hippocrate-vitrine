@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        nodejs 'NodeJS' // Must match NodeJS name in Jenkins Global Tool Configuration
+        nodejs 'NodeJS' // Must match NodeJS name in Global Tool Configuration
     }
     environment {
         BACKEND_IMAGE = 'hippocrate-backend:latest'
@@ -16,49 +16,49 @@ pipeline {
         stage('Install Backend Dependencies') {
             steps {
                 dir('backend') {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
         stage('Install Frontend Dependencies') {
             steps {
                 dir('client') {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
         stage('Test Backend') {
             steps {
                 dir('backend') {
-                    sh 'npm test'
+                    bat 'npm test'
                 }
             }
         }
         stage('Test Frontend') {
             steps {
                 dir('client') {
-                    sh 'npm test'
+                    bat 'npm test'
                 }
             }
         }
         stage('Build Backend Docker Image') {
             steps {
                 dir('backend') {
-                    sh 'docker build -t ${BACKEND_IMAGE} .'
+                    bat 'docker build -t %BACKEND_IMAGE% .'
                 }
             }
         }
         stage('Build Frontend Docker Image') {
             steps {
                 dir('client') {
-                    sh 'docker build -t ${FRONTEND_IMAGE} .'
+                    bat 'docker build -t %FRONTEND_IMAGE% .'
                 }
             }
         }
         stage('Export Docker Images') {
             steps {
-                sh 'docker save -o hippocrate-backend.tar ${BACKEND_IMAGE}'
-                sh 'docker save -o hippocrate-frontend.tar ${FRONTEND_IMAGE}'
+                bat 'docker save -o hippocrate-backend.tar %BACKEND_IMAGE%'
+                bat 'docker save -o hippocrate-frontend.tar %FRONTEND_IMAGE%'
             }
         }
     }
