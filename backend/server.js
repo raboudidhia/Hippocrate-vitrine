@@ -11,10 +11,13 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173',  // Remove the trailing slash
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: [
+    'http://localhost:3000',              
+    'http://hippocrate-frontend-service', 
+    'http://10.155.229.30:30646',        
+    'http://192.168.100.218:30646'       
+  ],
+  credentials: true
 }));
 
 // Body parser middleware
