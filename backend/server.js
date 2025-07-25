@@ -15,7 +15,7 @@ app.use(cors({
     'http://localhost:3000',              
     'http://hippocrate-frontend-service', 
     'http://10.155.229.30:30646',        
-    'http://192.168.100.218:30646'       
+    'http://192.168.1.9:30646'       
   ],
   credentials: true
 }));

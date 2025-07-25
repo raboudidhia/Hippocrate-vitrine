@@ -61,3 +61,20 @@ npm install
 
 # Run the development server
 npm run dev
+Running Tests
+
+
+
+
+
+Backend: cd backend && npm test
+
+
+
+Frontend: cd client && npm test
+
+CI/CD Pipeline
+
+Automated builds, tests, and deployment via Jenkins.
+
+Deployed to a local Kubernetes cluster using KIND.
