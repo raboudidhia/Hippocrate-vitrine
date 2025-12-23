@@ -69,7 +69,7 @@ client/
 │   ├── context/            # Contextes React
 │   │   └── AdminAuthContext.jsx
 │   ├── pages/              # Pages principales
-│   │   ├── acceuil.jsx
+│   │   ├── accueil.jsx
 │   │   ├── Services.jsx
 │   │   ├── Reservation.jsx
 │   │   └── Contact.jsx
@@ -96,7 +96,7 @@ client/
 
 ```javascript
 <Routes>
-  <Route path="/" element={<Acceuil />} />
+  <Route path="/" element={<Accueil />} />
   <Route path="/services" element={<Services />} />
   <Route path="/Contact" element={<Contact />} />
   <Route path="/reservation" element={<Reservation />} />
@@ -619,6 +619,9 @@ spec:
 ```
 
 #### 3. backend-deployment.yaml
+
+**⚠️ ATTENTION**: L'exemple ci-dessous contient des secrets en clair à des fins de démonstration. En production, utilisez Kubernetes Secrets (voir section "Sécurité des secrets Kubernetes" ci-dessous).
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -748,6 +751,74 @@ http://localhost:30646  # Frontend
 - **ClusterIP**: Backend et MongoDB ne sont accessibles qu'à l'intérieur du cluster
 - **Service Discovery**: Le backend accède à MongoDB via `mongodb://mongo:27017`
 - **emptyDir**: Volume temporaire pour MongoDB (données perdues au redémarrage du pod)
+
+### Sécurité des secrets Kubernetes
+
+**Version actuelle (NON recommandée en production)**:
+Les secrets sont en clair dans `backend-deployment.yaml`.
+
+**Version sécurisée (RECOMMANDÉE)**:
+
+1. **Créer un Secret Kubernetes**:
+```bash
+kubectl create secret generic hippocrate-secrets \
+  --from-literal=mongodb-uri='mongodb://mongo:27017/hippocrate' \
+  --from-literal=email-user='your-email@gmail.com' \
+  --from-literal=email-pass='your-app-password' \
+  --from-literal=jwt-secret='your-super-secret-key'
+```
+
+2. **Référencer le Secret dans le Deployment**:
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hippocrate-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hippocrate-backend
+  template:
+    metadata:
+      labels:
+        app: hippocrate-backend
+    spec:
+      containers:
+      - name: hippocrate-backend
+        image: hippocrate-backend:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
+        env:
+        - name: MONGODB_URI
+          valueFrom:
+            secretKeyRef:
+              name: hippocrate-secrets
+              key: mongodb-uri
+        - name: EMAIL_USER
+          valueFrom:
+            secretKeyRef:
+              name: hippocrate-secrets
+              key: email-user
+        - name: EMAIL_PASS
+          valueFrom:
+            secretKeyRef:
+              name: hippocrate-secrets
+              key: email-pass
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: hippocrate-secrets
+              key: jwt-secret
+```
+
+3. **Encore mieux: Utiliser un External Secret Manager**:
+   - HashiCorp Vault
+   - AWS Secrets Manager
+   - Azure Key Vault
+   - Google Secret Manager
+   - Sealed Secrets (Bitnami)
 
 ---
 
@@ -951,15 +1022,24 @@ npm run test:watch
 - Credentials autorisés pour l'authentification
 
 ### 4. Variables d'environnement
-- Secrets (JWT_SECRET, EMAIL_PASS) dans `.env`
-- **⚠️ ATTENTION**: Le fichier `backend-deployment.yaml` contient des secrets en clair (à déplacer vers Kubernetes Secrets)
+- Secrets (JWT_SECRET, EMAIL_PASS) dans `.env` pour développement local
+- **⚠️ ATTENTION**: Le fichier `backend-deployment.yaml` actuel contient des secrets en clair à des fins de démonstration
 
 ### 5. Recommandations de sécurité
-- ✅ Utiliser Kubernetes Secrets au lieu de plaintext
-- ✅ Ajouter rate limiting (ex: express-rate-limit)
+
+**Secrets Management**:
+- ✅ **CRITIQUE**: Migrer vers Kubernetes Secrets (voir section "Sécurité des secrets Kubernetes")
+- ✅ Utiliser un External Secret Manager en production (Vault, AWS Secrets Manager, etc.)
+- ✅ Ne jamais commiter de fichiers `.env` dans Git
+- ✅ Utiliser des secrets rotation policies
+
+**Application Security**:
+- ✅ Ajouter rate limiting (ex: express-rate-limit) pour prévenir les attaques DoS
 - ✅ Ajouter helmet.js pour sécuriser les headers HTTP
 - ✅ Valider les inputs côté client ET serveur
-- ✅ Utiliser HTTPS en production
+- ✅ Implémenter HTTPS en production avec Let's Encrypt
+- ✅ Ajouter CSRF protection pour les formulaires
+- ✅ Implémenter des logs de sécurité et monitoring
 
 ---
 
