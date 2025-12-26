@@ -15,6 +15,24 @@ Hippocrate is a modern and responsive website designed for a coworking space.The
 - **Frontend:** React, Tailwind CSS, Vite
 - **Backend:** Node.js, Express 
 - **Database:** MongoDB
+- **Security:** JWT, bcrypt
+- **DevOps:** Docker, Kubernetes, Jenkins
+
+## 📚 Technical Documentation
+
+- **[TECHNICAL_INTERVIEW_GUIDE.md](./TECHNICAL_INTERVIEW_GUIDE.md)** - Guide complet pour l'entretien technique (en français)
+  - Définitions détaillées des technologies (Node.js, Express, MongoDB, React, Vite)
+  - Documentation de toutes les APIs Express développées
+  - Explication approfondie de JWT et de la sécurité de l'API
+  - Architecture et communication frontend-backend
+  - Comparaison React avec Vite vs sans Vite
+  - 20+ questions techniques potentielles avec réponses détaillées
+  
+- **[QUICK_REFERENCE.md](./QUICK_REFERENCE.md)** - Aide-mémoire rapide pour l'entretien
+  - Définitions clés en 1 ligne
+  - Tableaux récapitulatifs des APIs
+  - Réponses rapides aux questions courantes
+  - Chiffres clés du projet
 
 
 ## 📸 Screenshots
@@ -51,30 +69,59 @@ Hippocrate is a modern and responsive website designed for a coworking space.The
 
 ## 🚀 Getting Started
 
+### Backend Setup
 ```bash
-# Clone the repo
-git clone https://github.com/raboudidhia/Hippocrate-vitrine.git
-cd hippocrate-vitrine
-
-# Install dependencies
+cd backend
 npm install
+cp .env.example .env  # Configure your environment variables
+npm start  # or npm run dev for development
+```
 
-# Run the development server
+### Frontend Setup
+```bash
+cd client
+npm install
 npm run dev
-Running Tests
+```
 
+## 🧪 Running Tests
 
+### Backend Tests
+```bash
+cd backend
+npm test
+```
 
+### Frontend Tests
+```bash
+cd client
+npm test
+```
 
+## 🔐 API Endpoints
 
-Backend: cd backend && npm test
+### Public APIs
+- `GET /api/rooms` - Get all rooms with availability
+- `POST /api/reservations` - Create a new reservation
 
+### Admin APIs (JWT Protected)
+- `POST /api/admin/login` - Admin authentication
+- `GET /api/admin/verify` - Verify JWT token
+- `GET /api/admin/reservations` - Get reservations for a specific date
+- `DELETE /api/admin/reservations/:id` - Delete a reservation
+- `PATCH /api/admin/rooms/:id` - Update room capacity
+- `PATCH /api/admin/rooms/:id/availability` - Update room availability for specific date
 
+## 🔒 Security Features
 
-Frontend: cd client && npm test
+- **JWT Authentication** - Stateless authentication with 24h expiration
+- **bcrypt Password Hashing** - Secure password storage with salt
+- **CORS Protection** - Whitelist of allowed origins
+- **Input Validation** - All API inputs are validated
+- **Environment Variables** - Sensitive data stored in .env files
 
-CI/CD Pipeline
+## 🚢 CI/CD Pipeline
 
-Automated builds, tests, and deployment via Jenkins.
+Automated builds, tests, and deployment via **Jenkins**.
 
-Deployed to a local Kubernetes cluster using KIND.
+Deployed to a local **Kubernetes** cluster using **KIND**.
