@@ -15,6 +15,12 @@ Hippocrate is a modern and responsive website designed for a coworking space.The
 - **Frontend:** React, Tailwind CSS, Vite
 - **Backend:** Node.js, Express 
 - **Database:** MongoDB
+- **DevOps:** Docker, Kubernetes (KIND), Jenkins
+
+## 📚 Documentation
+
+- **[📖 Technical Documentation](./TECHNICAL_DOCUMENTATION.md)** - Complete technical guide covering architecture, implementation details, deployment, and more (1291 lines)
+- **[🎤 Interview Guide](./INTERVIEW_GUIDE.md)** - Quick reference for answering technical questions about the project
 
 
 ## 📸 Screenshots
